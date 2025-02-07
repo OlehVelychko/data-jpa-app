@@ -3,8 +3,10 @@ package ua.com.alicecompany.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "person", schema = "crud_app_schema")
+@Table(name = "person")
 public class Person {
 
     @Id
@@ -29,6 +31,9 @@ public class Person {
             message = "Your address should be in this format: Country, City, Postal Code (6 digits)")
     @Column(name = "address", length = 255)
     private String address;
+
+    @OneToMany(mappedBy = "person")
+    private List<Item> items;
 
     public Person() {
     }
