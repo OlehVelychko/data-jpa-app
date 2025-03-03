@@ -11,8 +11,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "item_name")
-    private String item_name;
+    @Column(name = "itemName")
+    private String itemName;
 
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
@@ -21,13 +21,13 @@ public class Item {
     public Item() {
     }
 
-    public Item(String item_name, Person person) {
-        this.item_name = item_name;
+    public Item(String itemName, Person person) {
+        this.itemName = itemName;
         this.person = person;
     }
 
-    public Item(String item_name) {
-        this.item_name = item_name;
+    public Item(String itemName) {
+        this.itemName = itemName;
     }
 
     public Person getPerson() {
@@ -42,7 +42,7 @@ public class Item {
     public String toString() {
         return "Item{" +
                 "id=" + id +
-                ", item_name='" + item_name + '\'' +
+                ", itemName='" + itemName + '\'' +
                 '}';
     }
 }

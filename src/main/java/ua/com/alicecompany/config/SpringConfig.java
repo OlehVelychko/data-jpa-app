@@ -24,7 +24,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath:application.properties") // ✅ Меняем YAML на properties
+@PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = "ua.com.alicecompany")
 @EnableWebMvc
 @EnableTransactionManagement
